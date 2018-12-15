@@ -1,4 +1,5 @@
 from datetime import datetime
+import pandas as pd
 import random
  
 # generate random time
@@ -20,5 +21,10 @@ for i in range(500):
 for i in range(500):
     temp = [random.randint(111,200), random.randint(20,100),birth_date.strftime("%Y-%m-%d %H:%M:%S"), "unsafe"]
     data.append(temp)
+
+df = pd.DataFrame(data, columns = ['speed' , 'distance', 'timestamp','label']) 
+
+df.to_csv("data.csv", sep=',')
+
 
 
